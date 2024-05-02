@@ -29,26 +29,46 @@ Anyway, Here's the link
 |__ ros2_ws
 
     |__ install
-    
         |__ monicar_cv
             |__ lib
                 |__ monicar_cv => csi_pub
                                => csi_pub_video
                                => find_ball
                                => usbcam_pub
-                    
-                |__ launch => csicam_video.launch.py
-                       => csicam.launch.py
-                       => blob_detect.launch.py       
-                
+          
             |__ share
                 ├── monicar_cv
                     |__ launch => csicam_video.launch.py
                                => csicam.launch.py
                                => blob_detect.launch.py   
+    |__build
+        ├── monicar_cv
+            |__ launch => csicam_video.launch.py
+                       => csicam.launch.py
+                       => blob_detect.launch.py 
+            |__ build
+                |__lib
+                   |__monicar_cv  => csi_pub.py
+                               => csi_pub_video.py
+                               => find_ball.py
+                               => usbcam_pub.py 
+         |__ monicar_control => setup.py modify
 
-                         
-├── monicar_teleop => Publish cmd_vel from keyboard/gamepad
+
+         
+       entry_points={
+        'console_scripts': [
+            'blob_chase = monicar_control.blob_chase:main',
+            'chase_the_ball = monicar_control.chase_the_ball:main', 
+            'joy_control = monicar_control.joy_control:main',
+            'motor_control = monicar_control.motor_control:main',
+            'chase_object_yolo = monicar_control.chase_object_yolo:main', 
+            'chase_traffic_yolo = monicar_control.chase_traffic_yolo:main', 
+            'csi_pub_video = monicar_cv.csi_pub_video:main',
+        ],
+    },                  
+                   
+    ├── monicar_teleop => Publish cmd_vel from keyboard/gamepad
 
 (...)
 ├── Images
