@@ -18,44 +18,42 @@ Anyway, Here's the link
 * Opencv3.4.6 downgrade for darknet_ros
 
 ## Packages with Brief Explanation
-
- 
-|__ monicar_control => Control RC Car with Adafruit PCA9685
-
-|__ monicar_cv => Computer Vision Package with Opencv4,Handling Image data For IMX219 Camera
-
-        |__ csicam_video => Publish video(영상을 찍어 데이터를 만드는 과정을 추가한것임)
-             
+      
 |__ ros2_ws
-
     |__ install
-        |__ monicar_cv
-            |__ lib
-                |__ monicar_cv => csi_pub
-                               => csi_pub_video
-                               => find_ball
-                               => usbcam_pub
-          
-            |__ share
-                ├── monicar_cv
-                    |__ launch => csicam_video.launch.py
-                               => csicam.launch.py
-                               => blob_detect.launch.py   
-    |__build
-        ├── monicar_cv
-            |__ launch => csicam_video.launch.py
-                       => csicam.launch.py
-                       => blob_detect.launch.py 
-            |__ build
-                |__lib
-                   |__monicar_cv  => csi_pub.py
-                               => csi_pub_video.py
-                               => find_ball.py
-                               => usbcam_pub.py 
-         |__ monicar_control => setup.py  
-         **entry_points 부분 수정**
-
-
+    |   |__ monicar_cv
+    |       |__ lib
+    |       |    |__ monicar_cv => csi_pub
+    |       |                   => csi_pub_video
+    |       |                   => find_ball
+    |       |                   => usbcam_pub
+    |       |
+    |       |__ share
+    |           ├── monicar_cv
+    |               |__ launch => csicam_video.launch.py
+    |                           => csicam.launch.py
+    |                           => blob_detect.launch.py   
+    |__ build
+    |    ├── monicar_cv
+    |    |    |__ launch => csicam_video.launch.py
+    |    |    |          => csicam.launch.py
+    |    |    |          => blob_detect.launch.py 
+    |    |    |__ build
+    |    |        |__ lib
+    |    |             |__monicar_cv  => csi_pub.py
+    |    |    |                      => csi_pub_video.py
+    |    |    |                      => find_ball.py
+    |    |    |                      => usbcam_pub.py
+    |    |    |__ monicar_cv  => csi_pub.py
+    |    |    |               => csi_pub_video.py
+    |    |    |               => find_ball.py
+    |    |    |               => usbcam_pub.py 
+    |    |     
+    |    |__ monicar_control => setup.py  **entry_points 부분 수정**
+    |    |
+    |__ src
+    |   |__ monicar
+    |   |   |__ monicar_cv   => setup.py  **entry_points 부분 수정**
          
        entry_points={
         'console_scripts': [
