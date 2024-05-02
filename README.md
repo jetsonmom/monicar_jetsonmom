@@ -52,7 +52,8 @@ Anyway, Here's the link
                                => csi_pub_video.py
                                => find_ball.py
                                => usbcam_pub.py 
-         |__ monicar_control => setup.py  **entry_points 부분 수정**
+         |__ monicar_control => setup.py  
+         **entry_points 부분 수정**
 
 
          
