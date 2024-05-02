@@ -21,40 +21,41 @@ Anyway, Here's the link
       
 |__ ros2_ws
     |__ install
-    |   |__ monicar_cv
-    |       |__ lib
-    |       |    |__ monicar_cv => csi_pub
-    |       |                   => csi_pub_video
-    |       |                   => find_ball
-    |       |                   => usbcam_pub
-    |       |
-    |       |__ share
-    |           ├── monicar_cv
-    |               |__ launch => csicam_video.launch.py
-    |                           => csicam.launch.py
-    |                           => blob_detect.launch.py   
+        |__ monicar_cv
+            |__ lib
+                |__ monicar_cv
+                    |__ csi_pub
+                    |__ csi_pub_video
+                    |__ find_ball
+                    |__ usbcam_pub
+            |__ share
+                |__ monicar_cv
+                    |__ launch
+                        |__ csicam_video.launch.py
+                        |__ csicam.launch.py
+                        |__ blob_detect.launch.py
     |__ build
-    |    ├── monicar_cv
-    |    |    |__ launch => csicam_video.launch.py
-    |    |    |          => csicam.launch.py
-    |    |    |          => blob_detect.launch.py 
-    |    |    |__ build
-    |    |        |__ lib
-    |    |             |__monicar_cv  => csi_pub.py
-    |    |    |                      => csi_pub_video.py
-    |    |    |                      => find_ball.py
-    |    |    |                      => usbcam_pub.py
-    |    |    |__ monicar_cv  => csi_pub.py
-    |    |    |               => csi_pub_video.py
-    |    |    |               => find_ball.py
-    |    |    |               => usbcam_pub.py 
-    |    |     
-    |    |__ monicar_control => setup.py  **entry_points 부분 수정**
-    |    |
+        |__ monicar_cv
+            |__ launch
+                |__ csicam_video.launch.py
+                |__ csicam.launch.py
+                |__ blob_detect.launch.py
+            |__ build
+                |__ lib
+                    |__ monicar_cv
+                        |__ csi_pub.py
+                        |__ csi_pub_video.py
+                        |__ find_ball.py
+                        |__ usbcam_pub.py
+        |__ monicar_control
+            |__  setup.py entry_points 부분 수정
     |__ src
-    |   |__ monicar
-    |   |   |__ monicar_cv   => setup.py  **entry_points 부분 수정**
-         
+        |__ monicar
+            |__ monicar_cv
+                |__  setup.py entry_points 부분 수정
+
+   
+   ``` bash      
        entry_points={
         'console_scripts': [
             'blob_chase = monicar_control.blob_chase:main',
@@ -66,7 +67,7 @@ Anyway, Here's the link
             'csi_pub_video = monicar_cv.csi_pub_video:main',
         ],
     },                  
-                   
+  ```                 
     ├── monicar_teleop => Publish cmd_vel from keyboard/gamepad
 
 (...)
