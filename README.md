@@ -23,6 +23,15 @@ Anyway, Here's the link
 ├── monicar_control => Control RC Car with Adafruit PCA9685
 ├── monicar_cv => Computer Vision Package with Opencv4,Handling Image data For IMX219 Camera
              ├── csicam_video => Publish video(영상을 찍어 데이터를 만드는 과정을 추가한것임)
+|__ ros2_ws
+    |__ install
+        |__ monicar_cv
+            |__ launch
+                => csicam_video.launch.py
+                => csicam.launch.py
+                => blob_detect.launch.py
+    |__ share
+
 ├── monicar_teleop => Publish cmd_vel from keyboard/gamepad
 
 (...)
@@ -105,6 +114,16 @@ gst-launch-1.0 nvarguscamerasrc sensor_id=0 ! \
                           ├── launch ==> csicam_video.launch.py  
                                      ==> csicam.launch.py 
                                      ==> blob_detect.launch.py
+
+                                     |__ ros2_ws
+    |__ install
+        |__ monicar_cv
+            |__ launch
+                => csicam_video.launch.py
+                => csicam.launch.py
+                => blob_detect.launch.py
+    |__ share
+
 ``` bash
  jetson@nano:~/ros2_ws$ ros2 launch monicar_cv csicam_video.launch.py
 ```
