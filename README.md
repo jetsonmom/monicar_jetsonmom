@@ -233,7 +233,7 @@ Control RC Car with game controller
     <img src="./Images/joy_control.gif" width="500" />
 </p>
 
-```
+``` bash
 #jetson
 $ ros2 launch monicar_control motor.launch.py
 #jetson
@@ -253,7 +253,6 @@ Control RC Car with keyboard
 $ ros2 launch monicar_control motor.launch.py
 #jetson or PC
 $ ros2 run monicar_teleop teleop_keyboard
-
 ```
 
 ### **3. blob_tracking**
