@@ -238,7 +238,6 @@ Control RC Car with game controller
 $ ros2 launch monicar_control motor.launch.py
 #jetson
 $ ros2 launch monicar_teleop teleop_joy.launch.py
-
 ```
 
 ### **2. keyboard_control**
