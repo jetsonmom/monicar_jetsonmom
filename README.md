@@ -233,7 +233,7 @@ Control RC Car with game controller
     <img src="./Images/joy_control.gif" width="500" />
 </p>
 
-```bash
+``` bash
 #jetson
 $ ros2 launch monicar_control motor.launch.py
 #jetson
@@ -249,7 +249,7 @@ Control RC Car with keyboard
     <img src="./Images/keyboard_control.gif" width="500" />
 </p>
 
-```bash
+``` bash
 #jetson
 $ ros2 launch monicar_control motor.launch.py
 #jetson or PC
@@ -266,14 +266,14 @@ Find the any color box of the Jetson Nano on the screen and change the direction
 </p>
 
 
-```bash
+``` bash
 # Jetson
 $ ros2 launch monicar_control blob_all.launch.py
 ```
 
 Debugging with `rqt_image_view`
 
-```bash
+``` bash
 # Jetson, but PC is better
 ros2 run rqt_image_view rqt_image_view
 ```
@@ -288,7 +288,7 @@ Find the object of the Jetson Nano on the screen and change the direction of the
 </p>
 
 
-```bash
+``` bash
 #terminal #1
 # object detect using Yolo_v4
 $ ros2 launch darknet_ros yolov4-tiny.launch.py
@@ -303,7 +303,7 @@ $ ros2 launch monicar_control yolo_all.launch.py
 Train traffic signal, then Jetson nano will react to the traffic signal
 
 
-```bash
+``` bash
 #terminal #1
 # object detect using Yolo_v4
 $ ros2 launch darknet_ros yolov4-monicar.launch.py
