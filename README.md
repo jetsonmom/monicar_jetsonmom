@@ -76,8 +76,10 @@ Anyway, Here's the link
 ├── Images
 ├── LICENSE
 ├── README.md
+```
 ### 수정된 내용 build
-`````` bash
+
+``` bash
 cd ~/ros2_ws
 colcon build --packages-select monicar_cv
 source install/setup.bash
@@ -88,7 +90,7 @@ chmod +x ~/ros2_ws/src/monicar_cv/monicar_cv/csi_pub_video.py
 ## Prerequisite
 Clone these Repo
 
-```bash
+``` bash
 $ cd ~/ros2_ws/src
 
 monicar project code   
