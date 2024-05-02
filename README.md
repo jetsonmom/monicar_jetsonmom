@@ -76,6 +76,13 @@ Anyway, Here's the link
 ├── Images
 ├── LICENSE
 ├── README.md
+### 수정된 내용 build
+`````` bash
+cd ~/ros2_ws
+colcon build --packages-select monicar_cv
+source install/setup.bash
+chmod +x ~/ros2_ws/src/monicar_cv/monicar_cv/csi_pub_video.py
+
 ```
 
 ## Prerequisite
@@ -201,6 +208,18 @@ There's two modes for using joystick
 Packages for OpenCV applications
 
 * Find Blob with Certain color
+#### 수정된 부분
+* 조이스틱으로 조정하기 전에 영상을 저장하기위한 과정
+* 
+  ``` bash
+  cd ros2_ws
+  terminal 1
+  ros2 launch monicar_cv csicam_video.launch.py
+
+  terminal 2
+  ros2 run image_view image_view --ros-args --remap /image:=/image_raw
+
+```
 
 ## Application
 
