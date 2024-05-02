@@ -92,7 +92,22 @@ gst-launch-1.0 nvarguscamerasrc sensor_id=0 ! \
 * `sensor_id` : this value depends on Camera Slot in Jetson Nano.
 
 **Using ROS python**
-#### video capture
+#### video capture, csi camera
+
+├── ros2_ws
+├──────── install
+           ├── monicar_cv        
+                ├── launch ==> csicam_video.launch.py  
+                           ==> csicam.launch.py 
+                           ==> blob_detect.launch.py
+                ├── share            
+                     ├── monicar_cv
+                          ├── launch ==> csicam_video.launch.py  
+                                     ==> csicam.launch.py 
+                                     ==> blob_detect.launch.py
+``` bash
+ jetson@nano:~/ros2_ws$ ros2 launch monicar_cv csicam_video.launch.py
+```
 
 
 ```bash
