@@ -18,7 +18,7 @@ Anyway, Here's the link
 * Opencv3.4.6 downgrade for darknet_ros
 
 ## Packages with Brief Explanation
-      
+ ```     
 |__ ros2_ws
     |__ install
         |__ monicar_cv
@@ -54,7 +54,7 @@ Anyway, Here's the link
             |__ monicar_cv
                 |__  setup.py entry_points 부분 수정
 
-   
+   ```
    ``` bash      
        entry_points={
         'console_scripts': [
