@@ -92,6 +92,8 @@ gst-launch-1.0 nvarguscamerasrc sensor_id=0 ! \
 * `sensor_id` : this value depends on Camera Slot in Jetson Nano.
 
 **Using ROS python**
+#### video capture
+
 
 ```bash
 #if csi camera
