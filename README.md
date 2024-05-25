@@ -1,4 +1,4 @@
-# Monicar I 
+# Monicar I    
 
 ## AI RC Car with ROS2 Galactic + OpenCV + Yolo4-tiny
 
