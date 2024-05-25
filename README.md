@@ -25,30 +25,25 @@ Anyway, Here's the link
             |__ lib
                 |__ monicar_cv
                     |__ csi_pub
-                    |__ csi_pub_video
+                    |__ csi_pub_video  #make-modify
                     |__ find_ball
                     |__ usbcam_pub
             |__ share
                 |__ monicar_cv
                     |__ launch
-                        |__ csicam_video.launch.py
+                        |__ csicam_video.launch.py  #make-modify
                         |__ csicam.launch.py
                         |__ blob_detect.launch.py
     |__ build
         |__ monicar_cv
-            |__ launch
-                |__ csicam_video.launch.py
-                |__ csicam.launch.py
-                |__ blob_detect.launch.py
             |__ build
                 |__ lib
                     |__ monicar_cv
                         |__ csi_pub.py
-                        |__ csi_pub_video.py
+                        |__ csi_pub_video.py #make-modify
                         |__ find_ball.py
                         |__ usbcam_pub.py
-        |__ monicar_control
-            |__  setup.py entry_points 부분 수정
+       
     |__ src
         |__ monicar
             |__ monicar_cv
