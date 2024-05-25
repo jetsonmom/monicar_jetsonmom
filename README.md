@@ -158,8 +158,23 @@ cd ~/ros2_ws
 colcon build --packages-select monicar_cv
 source install/setup.bash
 jetson@nano:~/ros2_ws/src/monicar/monicar_cv/monicar_cv$ chmod +x csi_pub_video.py
+```
 
+#####  and camera test
+``` bash
+#if csi camera
+$ ros2 launch monicar_cv csicam.launch.py
+# if usb camera
+$ ros2 launch monicar_cv usbcam.launch.py
 
+# terminal #2
+$ ros2 run rqt_image_view rqt_image_view
+
+# terminal 1.   
+$ ros2 launch monicar_cv csicam_video.launch.py
+
+# terminal #2
+$ ros2 run rqt_image_view rqt_image_view
 ```
 
 ## Prerequisite
