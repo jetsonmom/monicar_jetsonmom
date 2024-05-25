@@ -48,6 +48,13 @@ Anyway, Here's the link
         |__ monicar
             |__ monicar_cv
                 |__  setup.py entry_points 부분 수정
+                |__monicar_cv
+                   |__monicar_cv
+                      |__ csi_pub.py
+                      |__ find_ball.py
+                      |__ __init.py
+                      |__ usbcam_pub.py
+                      |__ csi_pub_video.py
 
    ```
    ``` bash      
