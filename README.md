@@ -79,6 +79,77 @@ Anyway, Here's the link
 ├── LICENSE
 ├── README.md
 ```
+##### motor_control.py   ros2 launch monicar_control motor.launch.py
+``` bash
+
+#!/usr/bin/env python3
+import os
+from launch_ros.actions import ComposableNodeContainer
+from launch_ros.descriptions import ComposableNode  # Only if you use ComposableNode
+
+
+from ament_index_python.packages import get_package_share_directory
+from launch import LaunchDescription
+from launch.actions import DeclareLaunchArgument
+from launch_ros.actions import Node
+
+
+def generate_launch_description():
+    # 모터 설정
+    motor_parameter = LaunchConfiguration(
+        'motor_parameter',
+        default=os.path.join(
+            get_package_share_directory('monicar_control'),
+            'param/motor.yaml'
+        )
+    )
+  
+    # CSI 카메라 노드 설정
+    camera_node = ComposableNode(
+        package='v4l2_camera',
+        plugin='v4l2_camera::V4L2Camera',
+        name='csi_camera',
+        namespace='',
+        parameters=[{
+            'video_device': '/dev/video0',  # 비디오 디바이스 경로 확인 필요
+            'pixel_format': 'UYVY',  # 카메라에서 지원하는 픽셀 포맷으로 설정
+            'image_size': [1920, 1080],  # 해상도 설정
+            'framerate': 30  # 프레임레이트 설정
+        }],
+    )
+  
+    # 컴포저블 노드 컨테이너 생성
+    container = ComposableNodeContainer(
+        name='camera_container',
+        namespace='',
+        package='rclcpp_components',
+        executable='component_container',
+        composable_node_descriptions=[camera_node],
+        output='screen'
+    )
+  
+    # 이미지 저장 노드 설정
+    image_saver_node = Node(
+        package='image_view',
+        executable='image_saver',
+        name='image_saver',
+        remappings=[
+            ('image', '/csi_camera/image_raw')
+        ],
+        arguments=['_save_all_image:=true', '_filename_format:=/path/to/save/image%04i.jpg']
+    )
+
+    return LaunchDescription([
+        DeclareLaunchArgument('motor_parameter', default_value=motor_parameter),
+        Node(
+            package='monicar_control', executable='motor_control', name='motor_control_node',
+            output='screen', emulate_tty=True,
+            parameters=[motor_parameter],
+        ),
+        container,
+        image_saver_node
+    ])
+```
 ### 수정된 내용 build
 
 ``` bash
