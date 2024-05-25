@@ -156,7 +156,8 @@ def generate_launch_description():
 cd ~/ros2_ws
 colcon build --packages-select monicar_cv
 source install/setup.bash
-chmod +x ~/ros2_ws/src/monica/monicar_cv/monicar_cv/csi_pub_video.py
+jetson@nano:~/ros2_ws/src/monicar/monicar_cv/monicar_cv$ chmod +x csi_pub_video.py
+
 
 ```
 
