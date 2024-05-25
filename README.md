@@ -66,6 +66,7 @@ Anyway, Here's the link
             'motor_control = monicar_control.motor_control:main',
             'chase_object_yolo = monicar_control.chase_object_yolo:main', 
             'chase_traffic_yolo = monicar_control.chase_traffic_yolo:main', 
+            'csi_pub = monicar_cv.csi_pub:main',
             'csi_pub_video = monicar_cv.csi_pub_video:main',
         ],
     },                  
