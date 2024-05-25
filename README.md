@@ -164,7 +164,7 @@ gst-launch-1.0 nvarguscamerasrc sensor_id=0 ! \
                                      ==> csicam.launch.py 
                                      ==> blob_detect.launch.py
 
-                                     |__ ros2_ws
+|__ ros2_ws
     |__ install
         |__ monicar_cv
             |__ launch
