@@ -151,7 +151,7 @@ gst-launch-1.0 nvarguscamerasrc sensor_id=0 ! \
 
 **Using ROS python**
 #### video capture, csi camera
-
+``` bash
 ├── ros2_ws
 ├──────── install
            ├── monicar_cv        
@@ -172,7 +172,7 @@ gst-launch-1.0 nvarguscamerasrc sensor_id=0 ! \
                 => csicam.launch.py
                 => blob_detect.launch.py
     |__ share
-
+```
 ``` bash
  jetson@nano:~/ros2_ws$ ros2 launch monicar_cv csicam_video.launch.py
 ```
