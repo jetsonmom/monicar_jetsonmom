@@ -184,6 +184,9 @@ jetson@nano:~/ros2_ws/src/monicar/monicar_cv/monicar_cv$ chmod +x csi_pub_video.
 ```
 ``` bash
 mkdir -p /home/jetson/ros2_ws/save
+ls -l /home/jetson/ros2_ws/
+chmod -R 777 /home/jetson/ros2_ws/save
+
 ```
 #####  and camera test
 ``` bash
