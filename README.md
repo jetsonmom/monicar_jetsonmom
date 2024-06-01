@@ -12,7 +12,7 @@ Anyway, Here's the link
 ## Tested System information
 
 **Jetson Nano 4GB or 2GB + IMX219 160 CSI camera**
-* Jetpack 4.5.1
+* Jetpack 4.5.1 download
 * Ubuntu 20.24
 * ROS2 Galactic
 * Opencv3.4.6 downgrade for darknet_ros
