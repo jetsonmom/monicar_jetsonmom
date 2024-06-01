@@ -186,6 +186,15 @@ jetson@nano:~/ros2_ws/src/monicar/monicar_cv/monicar_cv$ chmod +x csi_pub_video.
 mkdir -p /home/jetson/ros2_ws/save
 ls -l /home/jetson/ros2_ws/
 chmod -R 777 /home/jetson/ros2_ws/save
+terminal 1
+ros2 launch monicar_control motor.launch.py
+terminal 2
+
+ros2 launch monicar_teleop teleop_joy.launch.py
+
+terminal 3
+
+ros2 topic echo /csi_camera/image_raw
 
 ```
 #####  and camera test
