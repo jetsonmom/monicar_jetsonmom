@@ -87,7 +87,7 @@ Anyway, Here's the link
 ├── LICENSE
 ├── README.md
 ```
-##### motor.launch.py 프로그램을 변경한다. 원래 코드는 단순한 모터 제어지만 아래 코드는 모터 제어, 영상 취득, 이미지 저장 기능이 있다   ros2 launch monicar_control motor.launch.py  
+##### motor.launch.py 프로그램을 변경한다. 원래 코드는 단순한 모터 제어지만 아래 코드는 모터 제어, 영상 취득, 이미지 저장 기능이 있다   ros2 launch monicar_control motor.launch.py home/jetson/ros2_ws/src/monicar/monicar_control/launch 
 ``` bash
 
 #!/usr/bin/env python3
