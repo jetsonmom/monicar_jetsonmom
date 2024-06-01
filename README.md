@@ -47,6 +47,7 @@ Anyway, Here's the link
     |__ src
         |__ monicar
             |__ monicar_cv
+                |__ launch 수정 'csi_pub_video', name='csicam_video_node',
                 |__  setup.py entry_points 부분 수정
                 |__monicar_cv
                    |__monicar_cv
