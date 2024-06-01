@@ -36,6 +36,7 @@ Anyway, Here's the link
                         |__ blob_detect.launch.py
     |__ build
         |__ monicar_cv
+            |__ setup.py 수정 'csi_pub_video = monicar_cv.csi_pub_video:main',
             |__ build
                 |__ lib
                     |__ monicar_cv
