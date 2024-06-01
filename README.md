@@ -144,7 +144,7 @@ def generate_launch_description():
         remappings=[
             ('image', '/csi_camera/image_raw')
         ],
-        arguments=['_save_all_image:=true', '_filename_format:=/path/to/save/image%04i.jpg']
+        arguments=['_save_all_image:=true', '_filename_format:=/home/jetson/ros2_ws/save/image%04i.jpg']
     )
 
     return LaunchDescription([
@@ -182,7 +182,9 @@ source install/setup.bash
 jetson@nano:~/ros2_ws/src/monicar/monicar_cv/monicar_cv$ chmod +x csi_pub_video.py
                                                             chmod +x csicam_video.launch.py
 ```
-
+``` bash
+mkdir -p /home/jetson/ros2_ws/save
+```
 #####  and camera test
 ``` bash
 #if csi camera
