@@ -158,6 +158,21 @@ def generate_launch_description():
         image_saver_node
     ])
 ```
+``` bash
+sudo apt update
+sudo apt install ros-galactic-image-view
+```
+``` bash
+import launch
+from launch import LaunchDescription
+from launch.actions import DeclareLaunchArgument
+from launch.substitutions import LaunchConfiguration
+```
+``` bash
+cd ~/ros2_ws
+colcon build --packages-select monicar_control
+source install/setup.bash
+```
 ### 수정된 내용 build
 
 ``` bash
