@@ -23,6 +23,10 @@ Anyway, Here's the link
     |__ install
         |__ monicar_cv
             |__ lib
+                |__ python3.8
+                    |__ site-packages
+                        |__ monicar_cv
+                            |__ csicam_video_node   super().__init__('csicam_video_node')
                 |__ monicar_cv
                     |__ csi_pub
                     |__ csi_pub_video  # csicam.launch-modify
@@ -36,12 +40,11 @@ Anyway, Here's the link
                         |__ blob_detect.launch.py
     |__ build
         |__ monicar_cv
-            |__ setup.py 수정 'csi_pub_video = monicar_cv.csi_pub_video:main',
             |__ build
                 |__ lib
                     |__ monicar_cv
                         |__ csi_pub.py
-                        |__ csi_pub_video.py # csi_pub.py modify
+                        |__ csi_pub_video.py # csi_pub.py modify   super().__init__('csicam_video_node')
                         |__ find_ball.py
                         |__ usbcam_pub.py
        
@@ -162,6 +165,7 @@ cd ~/ros2_ws
 colcon build --packages-select monicar_cv
 source install/setup.bash
 jetson@nano:~/ros2_ws/src/monicar/monicar_cv/monicar_cv$ chmod +x csi_pub_video.py
+                                                            chmod +x csicam_video.launch.py
 ```
 
 #####  and camera test
