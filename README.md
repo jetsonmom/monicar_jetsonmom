@@ -55,7 +55,7 @@ Anyway, Here's the link
                       |__ __init.py
                       |__ usbcam_pub.py
                       |__ csi_pub_video.py
-           |__ monicar_control
+             |__ monicar_control
                 |__  setup.py entry_points 부분 수정
 
    ```
