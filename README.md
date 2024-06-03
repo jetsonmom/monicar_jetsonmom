@@ -26,7 +26,9 @@ Anyway, Here's the link
                 |__ python3.8
                     |__ site-packages
                         |__ monicar_cv
-                            |__ csicam_video_node   super().__init__('csicam_video_node')
+                            |__submodules
+                               |__blob_detector.py
+                            |__ csicam_video_node.py    #super().__init__('csicam_video_node')
                 |__ monicar_cv
                     |__ csi_pub
                     |__ csi_pub_video  # csicam.launch-modify
@@ -38,21 +40,27 @@ Anyway, Here's the link
                         |__ csicam_video.launch.py  # csicam.launch.py-modify
                         |__ csicam.launch.py
                         |__ blob_detect.launch.py
+                     |__param
+                        |__cvparam.yaml
+    |__ install
          |__ monicar_control
              |__lib
-                |__ monicar_control
-                     |__motrol_control
-                     |__chase_traffic_yolo
-                     |__chase_the_ball
-                     |__chase_object_yolo
-                     |__joy_control
-                |__lib
-                   |__motrol_control
-                      |__lib
+                |__python3.8
+                   |__site-packages
+                      |__ monicar_control
                          |__submodules
-                         |__lib
-                         |__motor_control.py # steering is or not
-
+                            |__myutil.py  #PWMThrottle motorHat
+                         |__chase_traffic_yolo.py
+                         |__chase_the_ball.py
+                         |__chase_object_yolo.py
+                         |__motor_control.py  # steering is or not if self.hasSteer
+                 |__motrol_control
+                    |__motrol_control
+                    |__chase_traffic_yolo
+                    |__chase_the_ball
+                    |__chase_object_yolo
+                    |__joy_control
+                  
              |__share
                 |__ monicar_control
                      |__launch
@@ -60,15 +68,12 @@ Anyway, Here's the link
                         |__chase_traffic_yolo
                         |__chase_the_ball.launch.py
                         |__yolo_all.launch.py
-                        |__jyolo_traffic.launch.py
+                        |__yolo_traffic.launch.py
                      |__param
                         |__motor.pca9685Steer.yaml
+                        |__motor.yaml #steer center parameter, has_steer DETECT CLASS :"cup" etc
+              
 
-             |__motrol_control
-             |__chase_traffic_yolo
-             |__chase_the_ball
-             |__chase_object_yolo
-             |__csi_pub
 
     |__ build
         |__ monicar_cv
@@ -79,23 +84,60 @@ Anyway, Here's the link
                         |__ csi_pub_video.py # csi_pub.py modify   super().__init__('csicam_video_node')
                         |__ find_ball.py
                         |__ usbcam_pub.py
-       
+                
+        |__ monicar_control
+            |__build
+               |__ lib
+                  |__ monicar_control
+                      |__submodules
+                      |__motrol_control.py
+                      |__chase_traffic_yolo.py
+                      |__chase_the_ball.py
+                      |__chase_object_yolo.py
+                     
     |__ src
         |__ monicar
             |__ monicar_cv
                 |__ launch 수정 'csi_pub_video', name='csicam_video_node',
+                    |__ csi_cam.launch.py
+                    |__ usb_cam.launch.py
+                    |__ csivideo_cam.launch.py
                 |__  setup.py entry_points 부분 수정
                 |__monicar_cv
-                   |__monicar_cv
-                      |__ csi_pub.py
-                      |__ find_ball.py
-                      |__ __init.py
-                      |__ usbcam_pub.py
-                      |__ csi_pub_video.py
-             |__ monicar_control
-                |__  setup.py entry_points 부분 수정
+                   |__ submodules
+                   |__ build
+                   |__ install
+                       |__ setup.sh
+                   |__ csi_pub.py
+                   |__ find_ball.py
+                   |__ __init.py
+                   |__ usbcam_pub.py
+                   |__ csi_pub_video.py
+             |__ monicar_teleop
+                 |__ launch
+                     |__ teleop_joy.launch.py
+                     |__ teleop_keyboard.launch.py
+                 |__ monicar_teleop
+                 |__ param
 
-   ```
+             |__ monicar_control
+                |__ setup.py entry_points 부분 수정
+                |__ monicar_control
+                    |__motor_control.py
+                    |__chase_traffic_yolo.py
+                    |__chase_the_ball.py
+                    |__submodules
+                       |__mmyutil.py
+                |__ launch
+                    |__motrol_launch.py
+                    |__blob_chase.launch.py
+                    |__chase_the_ball.launch.py
+                    |__yolo_all.launch.py
+                    |__yolo_traffic.launch.py
+                |__ param
+                    |__motor.yaml
+                    |__motor.pca9685Steer.yaml
+                   
    ``` bash      
        entry_points={
         'console_scripts': [
